@@ -15,7 +15,7 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=havre&lang=fr&units=me
                 </p>
             </div>
             <div class="col-6 p-5">
-                <img src="https://openweathermap.org/img/wn/${data["list"][0].weather[0].icon}@2x.png" alt="">
+                <img src="https://openweathermap.org/img/w/${data["list"][0].weather[0].icon}@2x.png" alt="">
                 <p id="humidity" class="fs-4 fw-bold text-center">${data["list"][0].main.humidity} %</p>
             </div>
     `
@@ -26,7 +26,7 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=havre&lang=fr&units=me
     document.querySelector('#next_weather').innerHTML +=`
             <div class=" col flex-column p-0 text-center">
                 <p class="fw-bold fs-3 m-0">3°</p>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                <img src="https://openweathermap.org/img/w/10d@2x.png" alt="">
                 <p class="  m-0">15 h</p>
             </div
     `;
