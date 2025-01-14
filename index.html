@@ -14,33 +14,57 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
-          <div class="container-fluid p-1">
-            <a href=""><img onclick="show_movies()" src="./img/popcorntime_logo1.png" alt="popcorntime logo"> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Autres
-                  </a>
-                  <ul class="dropdown-menu">
-                  </ul>
-                </li>
-              </ul>
-              <div class="search_form d-flex" role="search">
-                <input id="search_input" class="form-control me-2" type="search" placeholder="Tapez le nom de votre film"
-                  aria-label="Search">
-                <button id="search_button" class="btn btn-outline-success" type="button">Chercher</button>
-              </div>
+        <nav class="navbar navbar-expand-lg p-0">
+            <div class="container-fluid p-1">
+                <a href="" class="website_logo"><img src="./img/How's_the_weather_logo.png"
+                        alt="How's_the_weather logo"></a>
+                <div class="search_form d-flex" role="search">
+                    <input id="search_input" class="form-control me-2 p-0 m-0" type="search"
+                        placeholder=" Le nom de la ville" aria-label="Search">
+                    <button id="search_button" class="btn btn-secondary" type="button"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <button class="bg-light navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu">
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
             </div>
-          </div>
+            <div class="px-3">
+                <h1 id="current_city">
+                    Le Havre, Seine-Maritime, France
+                </h1>
+
+            </div>
+
         </nav>
-      </header>
+    </header>
+    <main>
+        <h2 class="px-1">Aujourd'hui</h2>
+        <div id="weather_info" class="row m-2 justify-content-between bg-light rounded-4 ">
+            
+        </div>
+        <h2 class="px-1">Prévisions pour Le Havre</h2>
+        <div id="next_weather" class="row m-2  bg-light rounded-4 ">
+             
+        </div>
+    </main>
 
 
 
@@ -50,13 +74,7 @@
 
 
 
-
-
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="scirpt.js"></script>
 </body>
 
 </html>
