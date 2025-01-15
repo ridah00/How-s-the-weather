@@ -57,6 +57,9 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&lang=fr&u
 .then((data)=> {
     console.log(data);
     document.querySelector('.city_name').innerHTML = data["city"].name
+    let country_name = new Intl.DisplayNames(['fr'], {type: 'region'});
+    
+    document.querySelector('#country_name').innerHTML = `${country_name.of(data["city"].country)}`
     document.querySelector('#weather_info').innerHTML=`
             <div class="row col-6 m-0">
                 <p class="position-relative">
