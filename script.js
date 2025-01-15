@@ -93,3 +93,8 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&lang=fr&u
 })
 }
 document.querySelector('#search_button').addEventListener('click',function(){search_by_name(document.querySelector('#search_input').value);})
+document.querySelector('#search_input').addEventListener("keypress",function(event){
+    if (event.key === "Enter") {
+        document.querySelector("#search_button").click();
+      }
+})
