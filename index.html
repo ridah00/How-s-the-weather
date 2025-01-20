@@ -48,25 +48,31 @@
             </div>
             <div class="px-3">
                 <h1>
-                    <span class="city_name"></span>, <span id="country_name"></span>
+                    <span id="city_name"></span> <span id="country_name"></span>
                 </h1>
 
             </div>
 
         </nav>
     </header>
-    <main>
-        <h2 class="px-1">Aujourd'hui</h2>
-        <div id="weather_info" class="row m-2 justify-content-between bg-warning-emphasis rounded-4 ">
+    <div id="error">
 
-        </div>
-        <h2 class="px-1">Prévisions pour une journée </h2>
-        <div class="row m-0 justify-content-evenly">
-            <button class="btn active btn-light col-4" id="hourly_button">Par 3h</button>
-            <button class="btn btn-light col-4" id="daily_button">Par jour</button>
-        </div>
-        <div id="next_weather" class="d-flex flex-nowrap overflow-scroll m-2  bg-body rounded-4 justify-content-evenly ">
+    </div>
+    <main >
+        <div id="content" class="" >
+            <h2 class="px-1">Aujourd'hui</h2>
+            <div id="weather_info" class="row m-2 justify-content-between bg-warning-emphasis rounded-4 ">
 
+            </div>
+            <h2 class="px-1">Prévisions pour une journée </h2>
+            <div class="row m-0 justify-content-evenly">
+                <button class="btn active btn-light col-4" id="hourly_button">Par 3h</button>
+                <button class="btn btn-light col-4" id="daily_button">Par jour</button>
+            </div>
+            <div id="next_weather"
+                class="d-flex flex-nowrap overflow-scroll m-2  bg-body rounded-4 justify-content-evenly ">
+
+            </div>
         </div>
     </main>
 
@@ -80,7 +86,7 @@
 
     <script src="script.js"></script>
     <script src="./moment-with-locales.js"></script>
-    
+
     <script src="https://kit.fontawesome.com/f9a12e2310.js" crossorigin="anonymous"></script>
 </body>
 

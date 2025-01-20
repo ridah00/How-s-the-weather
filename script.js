@@ -19,7 +19,7 @@ function weather_hourly(data) {
 }
 function weather_daily(data) {
   for (let index = 1; index < data.list.length; index++) {
-    document.querySelector("#hourly_button").classList.remove("active");
+    
     document.querySelector("#daily_button").classList.add("active");
     if (moment(data.list[index].dt_txt).format("HH[h]") == "12h") {
       document.querySelector("#next_weather").innerHTML += `
@@ -30,7 +30,7 @@ function weather_daily(data) {
                   <img src="https://openweathermap.org/img/wn/${
                     data.list[index].weather[0].icon
                   }@2x.png" alt="">
-                  <p class="  m-0"> ${moment(data.list[index].dt_txt).locale("fr").format("dddd Do")}  à ${moment(
+                  <p class="  m-0"> ${moment(data.list[index].dt_txt).locale("fr").format("ddd Do")}  à ${moment(
         data.list[index].dt_txt
       ).format("HH[h]")}</p>
               </div>
@@ -44,7 +44,9 @@ fetch(
 )
   .then((Response) => Response.json())
   .then((data) => {
-    document.querySelector(".city_name").innerHTML = data["city"].name;
+    document.querySelector("#error").innerHTML ="";
+    document.querySelector("#hourly_button").classList.remove("active");
+    document.querySelector("#city_name").innerHTML = data["city"].name;
     let country_name = new Intl.DisplayNames(["fr"], { type: "region" });
 
     document.querySelector("#country_name").innerHTML = `${country_name.of(
@@ -102,8 +104,22 @@ function search_by_name(city_name) {
     )
       .then((Response) => Response.json())
       .then((data) => {
+
+        if(data.cod == "404"){
+            document.querySelector("#city_name").innerHTML =""
+            document.querySelector("#country_name").innerHTML =""
+            document.querySelector("#error").innerHTML =`
+                <p class="text-center" >oooops !!! ville au nom " ${document.querySelector("#search_input").value} " non trouvée </p>`;
+            document.querySelector("#search_input").value = "";
+            document.querySelector("#weather_info").innerHTML = "";
+            document.querySelector("#next_weather").innerHTML = "";
+            document.querySelector("#content").classList.add("d-none");
+            
+          }else {
+        document.querySelector("#error").innerHTML ="";
+        document.querySelector("#content").classList.remove("d-none");
         console.log(data);
-        document.querySelector(".city_name").innerHTML = data["city"].name;
+        document.querySelector("#city_name").innerHTML = data["city"].name;
         let country_name = new Intl.DisplayNames(["fr"], { type: "region" });
 
         document.querySelector("#country_name").innerHTML = `${country_name.of(
@@ -151,9 +167,9 @@ function search_by_name(city_name) {
             document.querySelector("#next_weather").innerHTML = "";
             weather_hourly(data);
           });
-        document.querySelector("#search_input").value = "";
-      });
-  }
+        
+      }});
+  } 
 }
 document.querySelector("#search_button").addEventListener("click", function () {
   search_by_name(document.querySelector("#search_input").value);
