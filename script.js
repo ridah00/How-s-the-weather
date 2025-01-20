@@ -10,7 +10,7 @@ function weather_hourly(data) {
             <img src="https://openweathermap.org/img/wn/${
               data.list[index].weather[0].icon
             }@2x.png" alt="">
-            <p class="  m-0">${moment(data.list[index].dt_txt).format(
+            <p class=" m-0">${moment(data.list[index].dt_txt).format(
               "HH[h]"
             )}</p>
         </div>
@@ -19,11 +19,11 @@ function weather_hourly(data) {
 }
 function weather_daily(data) {
   for (let index = 1; index < data.list.length; index++) {
-    
+    document.querySelector("#hourly_button").classList.remove("active");
     document.querySelector("#daily_button").classList.add("active");
     if (moment(data.list[index].dt_txt).format("HH[h]") == "12h") {
       document.querySelector("#next_weather").innerHTML += `
-              <div class=" p-4 text-center ">
+              <div class=" p-0 text-center ">
                   <p class="fw-bold fs-3 m-0">${
                     Math.round(10 * data.list[index].main.temp) / 10
                   }°c</p>
